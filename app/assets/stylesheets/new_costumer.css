@@ -1,5 +1,6 @@
 .Signup-title {
   font-size: 32px;
+  margin-bottom: 40px;
 }
 
 .Form-input {
@@ -7,6 +8,7 @@
   font-size: 18px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  padding: 5px;
 }
 
 .User-role {
@@ -14,7 +16,14 @@
 }
 
 .Form-submit {
+  padding: 5px;
   font-size: 16px;
   margin-top: 40px;
   margin-left: 130px;
+}
+
+.Signup-clerk {
+  font-size: 18px;
+  color: rgb(75, 72, 72);
+  margin-bottom: 40px;
 }

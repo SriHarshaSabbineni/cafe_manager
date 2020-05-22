@@ -1,0 +1,23 @@
+<p class="Signup-clerk"> Please Enter The Details of Your New Clerk </p>
+<section class="NewClerk">
+<%= form_with url: users_path do |form| %>
+ <div class="Form-section">
+  <p>Name:</p>
+  <%= form.text_field :name, class: "Form-input" %>
+ </div>
+ <div class="Form-section">
+  <p>E-mail:</p>
+  <%= form.email_field :email, class: "Form-input" %>
+ </div>
+ <div class="Form-section">
+  <p>Password:</p>
+  <%= form.password_field :password, class: "Form-input" %>
+ </div>
+ <div class="Form-section">
+  <%= form.text_field :role, class: "User-role", value: "clerk" %>
+ </div>
+ <div class="Form-section">
+  <%= form.submit "Sign Up!", class: "Form-submit"%>
+ </div>
+<% end %>
+</section>

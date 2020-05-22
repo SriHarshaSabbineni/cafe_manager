@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   get "/" => "home#index"
 
+
+
   get "/new_costumer" => "users#new_costumer"
+
+  get "/new_clerk" => "users#new_clerk"
 
   resources :users
 

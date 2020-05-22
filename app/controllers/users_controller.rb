@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     render "users/new_costumer"
   end
 
+  def new_clerk
+    render "users/new_clerk"
+  end
+
   def create
     User.create!(
       name: params[:name],
