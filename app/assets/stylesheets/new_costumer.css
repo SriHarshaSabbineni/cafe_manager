@@ -2,6 +2,10 @@
   font-size: 32px;
   margin-bottom: 40px;
 }
+.Signin-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
 
 .Form-input {
   margin-left: 10px;
@@ -26,4 +30,9 @@
   font-size: 18px;
   color: rgb(75, 72, 72);
   margin-bottom: 40px;
+}
+
+.Role-select {
+  font-size: 18px;
+  margin-left: 10px;
 }

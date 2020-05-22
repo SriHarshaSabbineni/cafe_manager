@@ -1,0 +1,22 @@
+<p class="Signin-title"> Sign In </p>
+<section class="NewCostumer">
+<%= form_with url: signin_path do |form| %>
+ <div class="Form-section">
+  <p>E-mail:</p>
+  <%= form.email_field :email, class: "Form-input" %>
+ </div>
+ <div class="Form-section">
+  <p>Password:</p>
+  <%= form.password_field :password, class: "Form-input" %>
+ </div>
+ <div class="Form-section">
+  <p>Your Role:</p>
+  <div class="Role-select">
+   <%= form.select :role, options_for_select( ['costumer', 'clerk', 'admin']) %>
+  </div>
+ </div>
+ <div class="Form-section" >
+  <%= form.submit "Sign In!", class: "Form-submit"%>
+ </div>
+<% end %>
+</section>

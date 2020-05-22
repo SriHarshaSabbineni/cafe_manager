@@ -1,18 +1,28 @@
 Rails.application.routes.draw do
 
-
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
-
-
   get "/" => "home#index"
 
 
 
   get "/new_costumer" => "users#new_costumer"
 
+
+
   get "/new_clerk" => "users#new_clerk"
+
+
+
+  get "/signin" => "sessions#new"
+
+
+
+  post "/signin" => "sessions#create"
+
+  get "/costumer_home" => "sessions#costumer_home"
+
+  get "/clerk_home" => "sessions#clerk_home"
+
+  get "/admin_home" => "sessions#admin_home"
 
   resources :users
 
