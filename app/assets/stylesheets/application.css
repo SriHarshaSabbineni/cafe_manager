@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.Page-header {
+  font-size: 18px;
+  background-color: cornsilk;
+}
+.User-name {
+  margin: 0px;
+  padding: 5px;
+  padding-left: 20px;
+}

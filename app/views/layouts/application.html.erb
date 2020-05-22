@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <section class="Page-header">
+      <% if @current_user %>
+      <p class="User-name">
+        Signed in as :
+        <%= @current_user.name %>
+      </p>
+      <% end %>
+    </section>
     <%= yield %>
   </body>
 </html>
