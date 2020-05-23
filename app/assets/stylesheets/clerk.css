@@ -1,0 +1,8 @@
+.Clerks-section {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.Clerk-email {
+  margin-left: 30px;
+}

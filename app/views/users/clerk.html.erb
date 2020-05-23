@@ -1,4 +1,4 @@
-<p class="Signup-clerk"> Please Enter The Details of Your New Clerk </p>
+<h3 class="Signup-clerk"> Please Enter The Details of Your New Clerk </h3>
 <section class="NewClerk">
 <%= form_with url: users_path do |form| %>
  <div class="Form-section">
@@ -17,7 +17,7 @@
   <%= form.text_field :role, class: "User-role", value: "clerk", readonly: true %>
  </div>
  <div class="Form-section">
-  <%= form.submit "Sign Up!", class: "Form-submit"%>
+  <%= form.submit "Add", class: "Form-submit"%>
  </div>
 <% end %>
 </section>

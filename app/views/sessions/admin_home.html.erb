@@ -1,2 +1,22 @@
 <h1>admin home</h1>
-<p><%= user_name %> </p>
+<p>
+  <%= link_to "Add New Clerk", clerks_path%>
+</p>
+<p>
+  <%= link_to "Go to Menu", menu_items_path%>
+</p>
+<p>
+  <%= link_to "See Reports", reports_path%>
+</p>
+<section class= "Available Clerks">
+  <h3>Available Clerks </h3>
+  <% User.where(role: "clerk").each do |clerk|%>
+  <div class="Clerks-section">
+    <p> <%= clerk.name %> </p>
+    <p class="Clerk-email">  <%= clerk.email %> </p>
+    <%= form_with( url: "/users/#{clerk.id}", method: "delete") do %>
+      <%= image_submit_tag("delete.png", class: "Delete") %>
+    <% end %>
+  </div>
+  <% end %>
+</section>

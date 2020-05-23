@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
 
-  get "/new_clerk" => "users#new_clerk"
+  get "/clerks" => "users#clerk"
 
 
 

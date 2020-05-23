@@ -21,9 +21,11 @@
 
 .Form-submit {
   padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 16px;
-  margin-top: 40px;
-  margin-left: 130px;
+  margin-top: 30px;
+  margin-left: 10px;
 }
 
 .Signup-clerk {

@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     render "users/new_costumer"
   end
 
-  def new_clerk
-    render "users/new_clerk"
+  def clerk
+    render "users/clerk"
   end
 
   def create
@@ -17,5 +17,12 @@ class UsersController < ApplicationController
       password: params[:password],
     )
     redirect_to "/"
+  end
+
+  def destroy
+    id = params[:id]
+    user = User.find(id)
+    user.destroy
+    redirect_to "/admin_home"
   end
 end
