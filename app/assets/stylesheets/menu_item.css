@@ -8,8 +8,14 @@
 
 .Menuitem-section {
   display: flex;
+  align-items: center;
 }
 
 .Price {
   margin-left: 30px;
+}
+
+.Delete {
+  height: 18px;
+  margin-left: 20px;
 }

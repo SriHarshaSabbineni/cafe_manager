@@ -27,6 +27,9 @@
   <div class="Menuitem-section">
     <p> <%= item.name %> </p>
     <p class="Price"> Rs: <%= item.price %> </p>
+    <%= form_with( url: "/menu_items/#{item.id}", method: "delete") do %>
+      <%= image_submit_tag("delete.png", class: "Delete") %>
+    <% end %>
   </div>
   <% end %>
 </section>
