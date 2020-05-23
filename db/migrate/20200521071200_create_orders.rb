@@ -6,7 +6,11 @@ class CreateOrders < ActiveRecord::Migration[6.0]
 
       t.datetime :date
 
+
+
       t.datetime :delivered_at
+
+
 
       t.integer :user_id
 

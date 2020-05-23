@@ -13,15 +13,16 @@ class SessionsController < ApplicationController
   end
 
   def costumer_home
-    render "costumer_home", locals: { user_name: current_user.name }
+    current_user
+    render "costumer_home"
   end
 
   def clerk_home
-    render "clerk_home", locals: { user_name: current_user.name }
+    render "clerk_home"
   end
 
   def admin_home
-    render "admin_home", locals: { user_name: current_user.name }
+    render "admin_home"
   end
 
   def destroy

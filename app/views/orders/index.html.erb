@@ -1,0 +1,36 @@
+<% MenuItem.where(menu_id: 1).each do |item|%>
+  <div class="Menuitem-section">
+    <p> <%= item.name %> </p>
+    <p class="Price"> Rs: <%= item.price %> </p>
+    <p class="Add-item">
+      <div class="Hide-form">
+        <%= form_with url: order_items_path do |form| %>
+        <div class="Form-section">
+
+          <%= form.text_field :menu_item_name, class: "Form-input", value: item.name, readonly: true %>
+        </div>
+        <div class="Form-section">
+
+          <%= form.number_field :menu_item_id, class: "Form-input", value: item.id, readonly: true %>
+        </div>
+        <div class="Form-section">
+
+          <%= form.number_field :menu_item_price, class: "Form-input", value: item.price, readonly: true %>
+        </div>
+        <div class="Form-section">
+          <% order_id= @current_user.orders.find_by(status: "created").id %>
+          <%= form.number_field :order_id, class: "Form-input", value: order_id, readonly: true %>
+        </div>
+      </div>
+        <div class="Form-section">
+          <%= form.submit "Add item", class: "Additem-button"%>
+        </div>
+        <% end %>
+    </p>
+  </div>
+<% end %>
+<div class="Confirmorder-button">
+  <%= form_with(url: "/orders/#{ @current_user.orders.find_by(status: "created").id}", method: "put") do |form|%>
+    <%= form.submit "Confirm order", class: "Confirm-button"%>
+  <% end %>
+</div>
