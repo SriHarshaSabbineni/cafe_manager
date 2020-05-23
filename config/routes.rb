@@ -14,15 +14,21 @@ Rails.application.routes.draw do
 
   get "/signin" => "sessions#new"
 
-
-
   post "/signin" => "sessions#create"
+
+  delete "/signout" => "sessions#destroy"
 
   get "/costumer_home" => "sessions#costumer_home"
 
+
+
   get "/clerk_home" => "sessions#clerk_home"
 
+
+
   get "/admin_home" => "sessions#admin_home"
+
+
 
   resources :users
 

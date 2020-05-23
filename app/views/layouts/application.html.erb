@@ -10,11 +10,12 @@
   </head>
 
   <body>
-    <section class="Page-header">
+    <section >
       <% if @current_user %>
-      <p class="User-name">
+      <p class="Page-header">
         Signed in as :
         <%= @current_user.name %>
+        <%= link_to "Sign Out",signout_path, method: "delete"%>
       </p>
       <% end %>
     </section>

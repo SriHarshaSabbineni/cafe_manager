@@ -23,4 +23,10 @@ class SessionsController < ApplicationController
   def admin_home
     render "admin_home", locals: { user_name: current_user.name }
   end
+
+  def destroy
+    session[:current_user_id] = nil
+    @current_user = nil
+    redirect_to "/"
+  end
 end
