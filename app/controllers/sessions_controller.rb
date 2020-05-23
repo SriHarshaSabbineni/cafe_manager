@@ -29,4 +29,7 @@ class SessionsController < ApplicationController
     @current_user = nil
     redirect_to "/"
   end
+
+  def reports
+  end
 end

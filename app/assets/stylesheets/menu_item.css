@@ -1,0 +1,15 @@
+.Menuid-field {
+  display: none;
+}
+
+.Add-button {
+  margin-top: 20px;
+}
+
+.Menuitem-section {
+  display: flex;
+}
+
+.Price {
+  margin-left: 30px;
+}

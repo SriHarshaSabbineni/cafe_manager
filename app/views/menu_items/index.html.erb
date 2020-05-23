@@ -1,0 +1,32 @@
+<section class="New-menuitem">
+  <h2 class="Menuitemform-title">Add Item </h2>
+  <%= form_with url: menu_items_path do |form| %>
+   <div class="Form-section">
+    <p class="Label-text">
+      Item name:
+    </p>
+    <%= form.text_field :name, class: "Name-inputfield"%>
+   </div>
+   <div class="Form-section">
+    <p class="Label-text">
+      Item price:
+    </p>
+    <%= form.number_field :price, class: "Price-inputfield"%>
+   </div>
+   <div class="Form-section">
+    <%= form.number_field :menu_id, class: "Menuid-field", value:1, readonly: true%>
+   </div>
+   <div class="Form-section">
+    <%= form.submit "Add",class: "Add-button"%>
+   </div>
+  <% end %>
+</section>
+<section class="Display-menuitems">
+  <h2>Menu Items</h2>
+  <% MenuItem.where(menu_id: 1).each do |item|%>
+  <div class="Menuitem-section">
+    <p> <%= item.name %> </p>
+    <p class="Price"> Rs: <%= item.price %> </p>
+  </div>
+  <% end %>
+</section>

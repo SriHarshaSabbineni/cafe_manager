@@ -1,0 +1,21 @@
+<h3 class="Reports-header">
+  Reports
+</h3>
+
+<section class="Costumercount-section">
+  <p class="Costumercount-label">
+   No. of. Costumers:
+  </p>
+  <p class="Costumercount-value">
+   <%= User.where(role: "costumer").count%>
+  </p>
+</section>
+
+<section class="Clerkcount-section">
+  <p class="Clerkcount-label">
+   No. of. Clerks:
+  </p>
+  <p class="Clerkcount-value">
+   <%= User.where(role: "clerk").count%>
+  </p>
+</section>

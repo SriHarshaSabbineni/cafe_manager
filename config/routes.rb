@@ -12,11 +12,25 @@ Rails.application.routes.draw do
 
 
 
+  resources :menu_items
+
+
+
+  get "/reports" => "sessions#reports"
+
+
+
   get "/signin" => "sessions#new"
+
+
 
   post "/signin" => "sessions#create"
 
+
+
   delete "/signout" => "sessions#destroy"
+
+
 
   get "/costumer_home" => "sessions#costumer_home"
 
