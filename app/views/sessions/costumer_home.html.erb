@@ -3,3 +3,23 @@
 <p>
   <%= link_to "place new order", orders_path, method: "post"%>
 </p>
+
+
+<section class="Existing-orders">
+  <% @current_user.orders.each do |order|%>
+    <p>
+      Order id: <%= order.id %>
+    </p>
+    <p>
+      Ordered at: <%= order.date %>
+    </p>
+    <p>
+      Delivered at: <%= order.delivered_at %>
+    </p>
+    <h3>Order items:</h3>
+    <% order.order_items.each do |item| %>
+      <p> <%= item.menu_item_name %>   &nbsp &nbsp &nbsp &nbsp Rs: <%= item.menu_item_price %> </p>
+
+    <% end %>
+  <% end %>
+</section>

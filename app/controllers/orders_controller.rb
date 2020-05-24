@@ -16,5 +16,6 @@ class OrdersController < ApplicationController
     order = Order.find(id)
     order.status = "confirmed"
     order.save
+    redirect_to "/costumer_home"
   end
 end
