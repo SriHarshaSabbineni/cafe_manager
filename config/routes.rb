@@ -28,6 +28,18 @@ Rails.application.routes.draw do
 
 
 
+  post "/walkin_costumer" => "orders#walkin_costumer"
+
+
+
+  get "/walkin_costumer" => "orders#walkin_costumer_orders"
+
+
+
+  put "walkin_costumer/:id" => "orders#walkin_costumer_order_confirm"
+
+
+
   delete "/signout" => "sessions#destroy"
 
 
@@ -44,9 +56,21 @@ Rails.application.routes.draw do
 
 
 
+  get "/pending_orders" => "orders#pending_orders"
+
+
+
+  put "/pending_orders/:id" => "orders#mark_as_delivered"
+
+
+
   resources :users
 
+
+
   resources :order_items
+
+
 
   resources :orders
 

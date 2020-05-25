@@ -6,6 +6,5 @@ class OrderItemsController < ApplicationController
       menu_item_name: params[:menu_item_name],
       menu_item_price: params[:menu_item_price],
     )
-    redirect_to "/orders"
   end
 end

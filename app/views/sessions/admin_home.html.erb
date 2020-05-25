@@ -8,6 +8,12 @@
 <p>
   <%= link_to "See Reports", reports_path%>
 </p>
+<p>
+  <%= link_to "Pending Orders", pending_orders_path%>
+</p>
+<p>
+  <%= link_to "place order for walk in costumer", walkin_costumer_path, method: "post"%>
+</p>
 <section class= "Available Clerks">
   <h3>Available Clerks </h3>
   <% User.where(role: "clerk").each do |clerk|%>

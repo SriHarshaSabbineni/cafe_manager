@@ -1,6 +1,7 @@
 <p>
   <%= link_to "Back to home", "/"%>
 </p>
+
 <% MenuItem.where(menu_id: 1).each do |item|%>
   <div class="Menuitem-section">
     <p> <%= item.name %> </p>
@@ -21,8 +22,10 @@
           <%= form.number_field :menu_item_price, class: "Form-input", value: item.price, readonly: true %>
         </div>
         <div class="Form-section">
-          <% order_id= @current_user.orders.find_by(status: "created").id %>
-          <%= form.number_field :order_id, class: "Form-input", value: order_id, readonly: true %>
+          <% if walkin_costumer.orders.find_by(status: "created") %>
+            <% order_id= walkin_costumer.orders.find_by(status: "created").id %>
+            <%= form.number_field :order_id, class: "Form-input", value: order_id, readonly: true %>
+          <% end %>
         </div>
       </div>
         <div class="Form-section">
@@ -33,7 +36,29 @@
   </div>
 <% end %>
 <div class="Confirmorder-button">
-  <%= form_with(url: "/orders/#{ @current_user.orders.find_by(status: "created").id}", method: "put") do |form|%>
-    <%= form.submit "Confirm order", class: "Confirm-button"%>
+  <% if walkin_costumer.orders.find_by(status: "created") %>
+    <%= form_with(url: "/walkin_costumer/#{ walkin_costumer.orders.find_by(status: "created").id}", method: "put") do |form|%>
+      <%= form.submit "Confirm order", class: "Confirm-button"%>
+    <% end %>
   <% end %>
 </div>
+<section class="Existing-orders">
+  <h3>Existing Orders</h3>
+  <% walkin_costumer.orders.order(id: :desc).each do |order|%>
+   <div class="Order-section">
+    <p>
+      Order id: <%= order.id %>
+    </p>
+    <p>
+      Ordered at: <%= order.date %>
+    </p>
+    <p>
+      Delivered at: <%= order.delivered_at %>
+    </p>
+    <h4>Order items:</h4>
+    <% order.order_items.each do |item| %>
+      <p> <%= item.menu_item_name %>   &nbsp &nbsp &nbsp &nbsp Rs: <%= item.menu_item_price %> </p>
+    <% end %>
+   </div>
+  <% end %>
+</section>

@@ -1,0 +1,25 @@
+<p>
+  <%= link_to "Back to home", "/"%>
+</p>
+<div>
+  <% Order.where(delivered_at: nil).each do |order|%>
+  <div class="Order-section">
+  <p>
+    Order id: <%= order.id%>
+    &nbsp&nbsp&nbsp
+    user id: <%= order.user_id%>
+    &nbsp&nbsp&nbsp
+    date: <%= order.date%>
+  </p>
+  <h4>Items:</h4>
+  <p>
+    <% order.order_items.each do |item| %>
+      <p> <%= item.menu_item_name %>   &nbsp &nbsp &nbsp &nbsp Rs: <%= item.menu_item_price %> </p>
+    <% end %>
+  </p>
+  <%= form_with(url: "/pending_orders/#{order.id}", method: "put") do |form|%>
+    <%= form.submit "Mark as Delivered", class: "Markasdelivered-button"%>
+  <% end %>
+  </div>
+  <% end %>
+</div>

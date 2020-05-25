@@ -13,16 +13,27 @@ class SessionsController < ApplicationController
   end
 
   def costumer_home
-    current_user
-    render "costumer_home"
+    if (current_user.role == "costumer")
+      render "costumer_home"
+    else
+      redirect_to "/"
+    end
   end
 
   def clerk_home
-    render "clerk_home"
+    if (current_user.role == "clerk")
+      render "clerk_home"
+    else
+      redirect_to "/"
+    end
   end
 
   def admin_home
-    render "admin_home"
+    if (current_user.role == "admin")
+      render "admin_home"
+    else
+      redirect_to "/"
+    end
   end
 
   def destroy
@@ -32,5 +43,10 @@ class SessionsController < ApplicationController
   end
 
   def reports
+    if (current_user.role == "admin")
+      render "reports"
+    else
+      redirect_to "/"
+    end
   end
 end

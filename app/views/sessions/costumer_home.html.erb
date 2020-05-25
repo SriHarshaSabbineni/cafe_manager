@@ -6,7 +6,9 @@
 
 
 <section class="Existing-orders">
-  <% @current_user.orders.each do |order|%>
+  <h3>Existing Orders</h3>
+  <% @current_user.orders.order(id: :desc).each do |order|%>
+   <div class="Order-section">
     <p>
       Order id: <%= order.id %>
     </p>
@@ -16,10 +18,10 @@
     <p>
       Delivered at: <%= order.delivered_at %>
     </p>
-    <h3>Order items:</h3>
+    <h4>Order items:</h4>
     <% order.order_items.each do |item| %>
       <p> <%= item.menu_item_name %>   &nbsp &nbsp &nbsp &nbsp Rs: <%= item.menu_item_price %> </p>
-
     <% end %>
+   </div>
   <% end %>
 </section>
