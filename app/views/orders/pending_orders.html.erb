@@ -2,7 +2,7 @@
   <%= link_to "Back to home", "/"%>
 </p>
 <div>
-  <% Order.where(delivered_at: nil).each do |order|%>
+  <% Order.where(delivered_at: nil, status: "confirmed").each do |order|%>
   <div class="Order-section">
   <p>
     Order id: <%= order.id%>

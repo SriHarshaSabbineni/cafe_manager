@@ -20,6 +20,14 @@
   margin: 20px;
   background-color: cornsilk;
   padding: 10px;
-  border: 1px solid chocolate;
+  border: 1px solid #613b;
   border-radius: 4px;
+}
+
+.Additem-button {
+  background-color: #613b;
+  color: cornsilk;
+  border: 0px;
+  border-radius: 4px;
+  padding: 5px;
 }

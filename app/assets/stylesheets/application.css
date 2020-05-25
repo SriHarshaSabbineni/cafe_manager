@@ -23,3 +23,9 @@
   display: flex;
   justify-content: space-between;
 }
+.Flash-error {
+  color: red;
+  margin-top: 40px;
+
+  font-size: 18px;
+}

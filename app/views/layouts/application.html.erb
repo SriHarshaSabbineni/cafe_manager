@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -19,6 +20,12 @@
       </p>
       <% end %>
     </section>
+
+    <% if flash[:error] %>
+     <p class="Flash-error">
+      <%= flash[:error]%>
+     </p>
+    <% end%>
     <%= yield %>
   </body>
 </html>

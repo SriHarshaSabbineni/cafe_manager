@@ -10,13 +10,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create!(
+    new_user = User.new(
       name: params[:name],
       email: params[:email],
       role: params[:role],
       password: params[:password],
     )
-    redirect_to "/"
+    if new_user.save
+      redirect_to "/"
+    else
+      flash[:error] = new_user.errors.full_messages.join(", ")
+      redirect_to "/"
+    end
   end
 
   def destroy
