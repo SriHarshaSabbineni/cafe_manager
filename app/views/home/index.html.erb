@@ -1,3 +1,40 @@
-<h1> Hi... welcome to our cafe </h1>
-<p>If you are a new user, please <%= link_to "Sign Up", new_costumer_path%> </p>
-<p>If you are already a user, please <%= link_to "Sign In", signin_path%></p>
+
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="home-style.css">
+</head>
+<body>
+<section class="Navbar">
+		<a href="index.html"><img src="logo.png" width="80px" height="80px"></a>
+		<h1>Beans n Cream</h1>
+		<ul>
+		    <li>
+			  <a href="/">Home</a>
+			  <a href="menu.html">Order</a>
+			  <a href="about.html">About us</a>
+			</li>
+		</ul>
+		<button><%= link_to "Sign Up", new_costumer_path%></button>
+		<button><%= link_to "Sign In", signin_path%></button>
+</section>
+<div class="cup">
+	<img src="cup.png" width="600px" height="600px">
+</div>
+<section class="welcome">
+	<h1>Welcome to Beans n Cream</h1>
+	<h3>See what we got today!</h3>
+	<button><a href="menu.html">Menu</a></button>
+</section>
+<footer>
+<div class="Store">
+	<h3>Our stores</h3>
+	<p>Chennai</p>
+	<p>Guntur</p>
+	<p>Vijayawada</p>
+	<p>Nellore</p>
+	<h5>&copy;Copyright-2020</h5>
+</div>
+</footer>
+</body>
+</html>
